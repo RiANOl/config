@@ -10,9 +10,9 @@ do
   [ "install.sh" = $file ] && continue
   [ "README" = $file ] && continue
   if [ -e ~/$file ]; then
-     echo "$path is exist."
+     echo "$file is exist."
      continue
   else
-    cp -R $base_dir/$file ~/
+    cp -R "$base_dir/$file" ~/
   fi
 done
