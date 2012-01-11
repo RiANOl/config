@@ -1,0 +1,15 @@
+[alias]
+  br = branch
+  ci = commit
+  co = checkout
+  di = diff
+  lg = log --graph --decorate
+  lgo = log --graph --decorate --oneline
+  st = status --short
+[branch]
+  autosetuprebase = always
+[color]
+  ui = auto
+[user]
+  name = RiANOl
+  email = ar3sti@gmail.com
