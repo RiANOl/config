@@ -3,7 +3,7 @@
 git submodule update --init
 
 base_dir=`dirname $0`
-for file in `ls -A`
+for file in `ls -A $base_dir`
 do
   [ ".git" = $file ] && continue
   [ ".gitmodules" = $file ] && continue
