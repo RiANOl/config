@@ -2,11 +2,16 @@
 
 git submodule update --init
 
-BASEDIR=`dirname $0`
-for f in `ls -A`
+base_dir=`dirname $0`
+for file in `ls -A`
 do
-  [ .git == $f ] && continue
-  [ .gitmodules == $f ] && continue
-  [ install.sh == $f ] && continue
-  cp -R $BASEDIR/$f ~/
+  [ ".git" = $file ] && continue
+  [ ".gitmodules" = $file ] && continue
+  [ "install.sh" = $file ] && continue
+  if [ -e ~/$file ]; then
+     echo "$path is exist."
+     continue
+  else
+    cp -R $base_dir/$file ~/
+  fi
 done
