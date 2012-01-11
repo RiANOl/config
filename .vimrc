@@ -45,7 +45,6 @@ set viminfo='100,<1000,s100
 set t_Co=256
 
 filetype on
-syntax on
 
 syntax enable
 set background=dark
@@ -53,6 +52,9 @@ let g:solarized_termcolors=256
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
-colorscheme solarized
 
 let g:neocomplcache_enable_at_startup = 1
+
+call pathogen#infect()
+
+colorscheme solarized
