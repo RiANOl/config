@@ -8,6 +8,7 @@ do
   [ ".git" = $file ] && continue
   [ ".gitmodules" = $file ] && continue
   [ "install.sh" = $file ] && continue
+  [ "README" = $file ] && continue
   if [ -e ~/$file ]; then
      echo "$path is exist."
      continue
