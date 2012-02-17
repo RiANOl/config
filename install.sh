@@ -1,11 +1,8 @@
 #!/bin/sh
 
-base_dir=`dirname $0`
+base_dir=`dirname $0`"/home"
 for file in `ls -A $base_dir`
 do
-  [ ".git" = $file ] && continue
-  [ "install.sh" = $file ] && continue
-  [ "README" = $file ] && continue
   if [ -e ~/$file ]; then
      echo "$file is exist."
      continue
