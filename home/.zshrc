@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
-plugins=(brew bundler gem rvm)
+plugins=(brew bundler gem git-flow rvm)
 
 source $ZSH/oh-my-zsh.sh
 
