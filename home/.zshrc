@@ -66,8 +66,8 @@ function title {
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+alias l='ll -A'
 alias lsa='ls -A'
-alias lla='ll -A'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
