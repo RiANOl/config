@@ -1,7 +1,5 @@
 #!/bin/sh
 
-bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-
 cd `dirname $0`
 git submodule update --init
 
