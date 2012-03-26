@@ -19,7 +19,6 @@ PROMPT="${user_host} ${current_dir} ${current_time} ${window}${rvm_ruby}${git_br
 RPROMPT="${return_code}"
 
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin/:/usr/X11R6/bin:/usr/bin:/usr/sbin:/bin:/sbin
-export NODE_PATH='/usr/local/lib/node_modules/'
 
 export LANG='en_US.UTF-8'
 export LANGUAGE=$LANG
