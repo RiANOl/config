@@ -1,3 +1,5 @@
+[core]
+  excludesfile = ~/.gitignore
 [alias]
   br = branch
   ci = commit

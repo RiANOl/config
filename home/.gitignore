@@ -1,4 +1,9 @@
 .svn                                                                                                                    
-.DS_Store                                                                                                               
+
+*.log
+
+Icon?
 __MACOSX
+.DS_Store*
+ehthumbs.db
 Thumbs.db
