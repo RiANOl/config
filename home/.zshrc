@@ -11,14 +11,13 @@ local current_dir='%{$fg_bold[blue]%}%~%{$reset_color%}'
 local current_time='%{$fg[green]%}%*%{$reset_color%}'
 local window=''
 [[ x$WINDOW != x ]] && window='%{$fg[yellow]%}#$WINDOW%{$reset_color%} '
-local pane=''
-[[ x$TMUX_PANE != x ]] && pane='%{$fg[yellow]%}%$TMUX_PANE%{$reset_color%} '
+[[ x$TMUX_PANE != x ]] && window='%{$fg[yellow]%}#$(tmux lsw | grep active | cut -d : -f 1)%{$reset_color%} '
 local rvm_ruby=''
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && rvm_ruby='%{$fg[red]%}$(rvm-prompt i v g)%{$reset_color%} '
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-PROMPT="${user_host} ${current_dir} ${current_time} ${window}${pane}${rvm_ruby}${git_branch}%B%#%b "
+PROMPT="${user_host} ${current_dir} ${current_time} ${window}${rvm_ruby}${git_branch}%B%#%b "
 RPROMPT="${return_code}"
 
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin/:/usr/X11R6/bin:/usr/bin:/usr/sbin:/bin:/sbin
