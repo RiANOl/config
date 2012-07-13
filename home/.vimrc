@@ -3,7 +3,7 @@ set number
 set ruler
 set secure
 set novisualbell
-	
+
 set showcmd
 set noshowmatch
 set showmode
