@@ -1,7 +1,7 @@
-.svn                                                                                                                    
-
+*~
+*.swp
 *.log
-
+.svn                                                                                                                    
 Icon?
 __MACOSX
 .DS_Store*
