@@ -34,7 +34,7 @@ set tabpagemax=20
 
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8,shift-jis,euc-jp,big5,gb18030,utf-16
+set fileencodings=utf-8,shift-jis,euc-jp,big5,gb18030,utf-16,utf-16le,utf-16be
 set termencoding=utf-8
 
 set fileformat=unix
