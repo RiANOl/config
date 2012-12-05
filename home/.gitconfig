@@ -12,8 +12,8 @@
   autosetuprebase = always
 [color]
   ui = auto
+[push]
+  default = matching
 [user]
   name = Rianol Jou
   email = ar3sti@gmail.com
-[push]
-  default = matching
