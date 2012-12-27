@@ -57,6 +57,7 @@ let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_force_overwrite_completefunc = 1
 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 colorscheme solarized
