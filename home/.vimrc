@@ -25,7 +25,7 @@ set softtabstop=8
 set tabstop=8
 
 if version >= 703
-set colorcolumn=120
+  set colorcolumn=120
 endif
 set nolinebreak
 set wrap
@@ -53,9 +53,9 @@ let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
 
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_force_overwrite_completefunc = 1
+if !filereadable(expand('<sfile>:p:h') . '/.vim/bundle/YouCompleteMe/python/ycm_core.so')
+  let g:pathogen_disabled = ['YouCompleteMe']
+endif
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
