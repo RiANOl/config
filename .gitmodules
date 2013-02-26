@@ -19,9 +19,9 @@
 [submodule "home/.vim/bundle/vim-pathogen"]
 	path = home/.vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "home/.vim/bundle/YouCompleteMe"]
-	path = home/.vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "home/.vim/bundle/javascript-libraries-syntax.vim"]
 	path = home/.vim/bundle/javascript-libraries-syntax.vim
 	url = https://github.com/othree/javascript-libraries-syntax.vim.git
+[submodule "home/.vim/bundle/neocomplcache"]
+	path = home/.vim/bundle/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.git

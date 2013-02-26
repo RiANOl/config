@@ -37,15 +37,14 @@ set fileformats=unix,dos,mac
 
 set background=dark
 set t_Co=256
+
 let g:solarized_termcolors=256
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
 
-let g:pathogen_disabled = []
-if v:version < 703 || !has('patch584') || !filereadable(expand('<sfile>:p:h') . '/.vim/bundle/YouCompleteMe/python/ycm_core.so')
-  call add(g:pathogen_disabled, 'YouCompleteMe')
-endif
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_wildcard=0
 
 filetype plugin indent on
 syntax enable
