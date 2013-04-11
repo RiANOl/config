@@ -12,6 +12,8 @@
   autosetuprebase = always
 [color]
   ui = auto
+[include]
+  path = ~/.giturl
 [push]
   default = matching
 [user]
