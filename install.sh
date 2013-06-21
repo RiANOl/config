@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd `dirname $0`
-git submodule update --init
+git submodule update --init --recursive
 
 cd home
 base_dir=`pwd -P`
