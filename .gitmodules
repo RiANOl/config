@@ -22,6 +22,3 @@
 [submodule "home/.vim/bundle/javascript-libraries-syntax.vim"]
 	path = home/.vim/bundle/javascript-libraries-syntax.vim
 	url = https://github.com/othree/javascript-libraries-syntax.vim.git
-[submodule "home/.vim/bundle/neocomplcache"]
-	path = home/.vim/bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.git
