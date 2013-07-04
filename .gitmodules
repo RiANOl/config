@@ -25,3 +25,9 @@
 [submodule "home/.vim/bundle/YouCompleteMe"]
 	path = home/.vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "home/.vim/bundle/vim-fugitive"]
+	path = home/.vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "home/.vim/bundle/vim-airline"]
+	path = home/.vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline

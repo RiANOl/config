@@ -3,6 +3,8 @@ set cursorline
 set nocompatible
 set display=lastline
 set hlsearch
+set lazyredraw
+set laststatus=2
 set nolinebreak
 set number
 set ruler
