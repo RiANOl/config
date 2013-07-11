@@ -45,9 +45,10 @@ let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
 
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_wildcard=0
-let g:neocomplcache_force_overwrite_completefunc=1
+let g:pathogen_disabled = []
+if v:version < 703 || !has('patch584') || !filereadable(expand('<sfile>:p:h') . '/.vim/bundle/YouCompleteMe/python/ycm_core.so')
+  call add(g:pathogen_disabled, 'YouCompleteMe')
+endif
 
 filetype plugin indent on
 syntax enable
