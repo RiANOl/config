@@ -40,21 +40,29 @@ set fileformats=unix,dos,mac
 set background=dark
 set t_Co=256
 
-let g:solarized_termcolors=256
-let g:solarized_bold=0
-let g:solarized_underline=0
-let g:solarized_italic=0
+filetype off
 
-let g:pathogen_disabled = []
-if v:version < 703 || !has('patch584') || !filereadable(expand('<sfile>:p:h') . '/.vim/bundle/YouCompleteMe/python/ycm_core.so')
-  call add(g:pathogen_disabled, 'YouCompleteMe')
-endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'ap/vim-css-color'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'bling/vim-airline'
+Bundle 'othree/html5.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on
 syntax enable
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+let g:solarized_termcolors=256
+let g:solarized_bold=0
+let g:solarized_underline=0
+let g:solarized_italic=0
 
 colorscheme solarized
 
