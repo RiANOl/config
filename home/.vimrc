@@ -54,6 +54,7 @@ Bundle 'othree/html5.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 if (v:version == 703 && has('patch584')) || v:version > 703
   Bundle 'Valloric/YouCompleteMe'
 endif
