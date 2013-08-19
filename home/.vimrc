@@ -48,7 +48,6 @@ call vundle#rc()
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'bling/vim-airline'
 Bundle 'othree/html5.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
