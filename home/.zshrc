@@ -64,5 +64,3 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias vi='vim -p'
-
-[[ -s "$HOME/.zsh-alias" ]] && source ~/.zsh-alias
