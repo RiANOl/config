@@ -49,6 +49,8 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'Yggdroot/indentLine'
+Bundle 'bitc/vim-bad-whitespace'
 Bundle 'bling/vim-airline'
 Bundle 'othree/html5.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
@@ -61,6 +63,8 @@ endif
 
 filetype plugin indent on
 syntax enable
+
+let g:indentLine_color_term=239
 
 let g:solarized_termcolors=256
 let g:solarized_bold=0
