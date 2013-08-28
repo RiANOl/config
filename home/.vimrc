@@ -45,6 +45,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
