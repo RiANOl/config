@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export DISABLE_AUTO_UPDATE=true
 
-plugins=(brew bundler gem git-flow rvm)
+plugins=(brew bundler gem git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -14,11 +14,11 @@ local window=''
 [[ x$TMUX_PANE != x ]] && export TMUX_WINDOW=$(tmux display -p "#I")
 [[ x$TMUX_WINDOW != x ]] && window='%{$fg[yellow]%}#${TMUX_WINDOW}%{$reset_color%} '
 local rvm_ruby=''
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && rvm_ruby='%{$fg[red]%}$(rvm-prompt i v g)%{$reset_color%} '
+type rbenv &> /dev/null && rbenv_version='%{$fg[red]%}$(rbenv version-name)%{$reset_color%} '
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-PROMPT="${user_host} ${current_dir} ${current_time} ${window}${rvm_ruby}${git_branch}%B%#%b "
+PROMPT="${user_host} ${current_dir} ${current_time} ${window}${rbenv_version}${git_branch}%B%#%b "
 RPROMPT="${return_code}"
 
 export PATH=~/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
@@ -56,11 +56,11 @@ unsetopt auto_menu
 zstyle ':completion:*' list-colors ${LS_COLORS}
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=0=0=01'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 alias l='ll -A'
 alias lsa='ls -A'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias vi='vim -p'
+
+type rbenv &> /dev/null && eval "$(rbenv init -)"

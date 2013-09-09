@@ -65,9 +65,12 @@ endif
 filetype plugin indent on
 syntax enable
 
+let g:airline#extensions#tabline#enabled=1
+
 let g:indentLine_color_term=239
 
 let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
