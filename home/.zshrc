@@ -5,21 +5,37 @@ plugins=(brew bundler gem git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
-local return_code='%(?..%{$fg_bold[red]%}%? ↵%{$reset_color%})'
-local user_host='%{$fg_bold[red]%}%n%{$reset_color%}@%{$fg[cyan]%}%m%{$reset_color%}'
-local current_dir='%{$fg_bold[blue]%}%~%{$reset_color%}'
-local current_time='%{$fg[green]%}%*%{$reset_color%}'
-local window=''
-[[ x$WINDOW != x ]] && window='%{$fg[yellow]%}#$WINDOW%{$reset_color%} '
-[[ x$TMUX_PANE != x ]] && export TMUX_WINDOW=$(tmux display -p "#I")
-[[ x$TMUX_WINDOW != x ]] && window='%{$fg[yellow]%}#${TMUX_WINDOW}%{$reset_color%} '
-local rvm_ruby=''
-type rbenv &> /dev/null && rbenv_version='%{$fg[red]%}$(rbenv version-name)%{$reset_color%} '
-local git_branch='$(git_prompt_info)%{$reset_color%}'
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-PROMPT="${user_host} ${current_dir} ${current_time} ${window}${rbenv_version}${git_branch}%B%#%b "
-RPROMPT="${return_code}"
+dark_grey="%F{239}"
+light_grey="%F{245}"
+yellow="%F{136}"
+orange="%F{166}"
+red="%F{124}"
+magenta="%F{125}"
+violet="%F{61}"
+blue="%F{33}"
+cyan="%F{37}"
+green="%F{64}"
+
+user_host="%{$green%}%n%{$dark_grey%}@%{$cyan%}%m%{$reset_color%}"
+current_dir="%{$blue%}%~%{$reset_color%}"
+current_time="%{$dark_grey%}[%{$violet%}%*%{$dark_grey%}]%{$reset_color%}"
+prompt_char="%{$light_grey%}%#%{$reset_color%}"
+
+window=""
+window_number=""
+[[ x$WINDOW != x ]] && window="$WINDOW"
+[[ x$TMUX_PANE != x ]] && window="$(tmux display -p "#I")"
+[[ x$window != x ]] && window_number="%{$dark_grey%}[%{$yellow%}#$window%{$dark_grey%}]%{$reset_color%}"
+
+git_branch='$(git_prompt_info)'
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$dark_grey%}[%{$magenta%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$dark_grey%}]%{$reset_color%}"
+
+rbenv_version=""
+type rbenv &> /dev/null && rbenv_version="%{$dark_grey%}[%{$red%}$(rbenv version-name)%{$dark_grey%}]%{$reset_color%}"
+
+export PROMPT="${user_host} ${current_dir} ${prompt_char} "
+export RPROMPT="${window_number}${git_branch}${rbenv_version}${current_time}"
 
 export PATH=~/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
 
