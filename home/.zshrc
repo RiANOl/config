@@ -18,17 +18,17 @@ green="%F{64}"
 
 user_host="%{$green%}%n%{$dark_grey%}@%{$cyan%}%m%{$reset_color%}"
 current_dir="%{$blue%}%~%{$reset_color%}"
-current_time="%{$dark_grey%}[%{$violet%}%*%{$dark_grey%}]%{$reset_color%}"
+current_time="%{$dark_grey%}[%{$violet%}%T%{$dark_grey%}]%{$reset_color%}"
 prompt_char="%{$light_grey%}%#%{$reset_color%}"
 
 window=""
 window_number=""
 [[ x$WINDOW != x ]] && window="$WINDOW"
 [[ x$TMUX_PANE != x ]] && window="$(tmux display -p "#I")"
-[[ x$window != x ]] && window_number="%{$dark_grey%}[%{$yellow%}#$window%{$dark_grey%}]%{$reset_color%}"
+[[ x$window != x ]] && window_number="%{$dark_grey%}[%{$magenta%}#$window%{$dark_grey%}]%{$reset_color%}"
 
 git_branch='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$dark_grey%}[%{$magenta%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$dark_grey%}[%{$yellow%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$dark_grey%}]%{$reset_color%}"
 
 rbenv_version=""
