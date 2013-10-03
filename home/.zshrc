@@ -23,8 +23,8 @@ prompt_char="%{$light_grey%}%#%{$reset_color%}"
 
 window=""
 window_number=""
-[[ x$WINDOW != x ]] && window="$WINDOW"
-[[ x$TMUX_PANE != x ]] && window="$(tmux display -p "#I")"
+[[ x$WINDOW != x ]] && window='$WINDOW'
+[[ x$TMUX_PANE != x ]] && window='$(tmux display -p "#I")'
 [[ x$window != x ]] && window_number="%{$dark_grey%}[%{$magenta%}#$window%{$dark_grey%}]%{$reset_color%}"
 
 git_branch='$(git_prompt_info)'
@@ -32,7 +32,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$dark_grey%}[%{$yellow%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$dark_grey%}]%{$reset_color%}"
 
 rbenv_version=""
-type rbenv &> /dev/null && rbenv_version="%{$dark_grey%}[%{$red%}$(rbenv version-name)%{$dark_grey%}]%{$reset_color%}"
+type rbenv &> /dev/null && rbenv_version='%{$dark_grey%}[%{$red%}$(rbenv version-name)%{$dark_grey%}]%{$reset_color%}'
 
 export PROMPT="${user_host} ${current_dir} ${prompt_char} "
 export RPROMPT="${window_number}${git_branch}${rbenv_version}${current_time}"
