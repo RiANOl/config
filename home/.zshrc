@@ -1,5 +1,11 @@
-export ZSH=$HOME/.oh-my-zsh
-export DISABLE_AUTO_UPDATE=true
+export PATH=~/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
+
+type rbenv &> /dev/null && eval "$(rbenv init -)"
+
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME=""
+DISABLE_AUTO_UPDATE="true"
+DISABLE_CORRECTION="true"
 
 plugins=(brew bundler gem git-flow)
 
@@ -37,8 +43,6 @@ type rbenv &> /dev/null && rbenv_version='%{$dark_grey%}[%{$red%}$(rbenv version
 export PROMPT="${user_host} ${current_dir} ${prompt_char} "
 export RPROMPT="${window_number}${git_branch}${rbenv_version}${current_time}"
 
-export PATH=~/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
-
 export LANG='en_US.UTF-8'
 export LANGUAGE=$LANG
 export LC_CTYPE=$LANG
@@ -67,7 +71,6 @@ export LESS='-FRX'
 export LESSHISTFILE='/dev/null'
 unset HISTFILE
 
-unsetopt correct_all
 unsetopt auto_menu
 zstyle ':completion:*' list-colors ${LS_COLORS}
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=0=0=01'
@@ -78,5 +81,3 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias vi='vim -p'
-
-type rbenv &> /dev/null && eval "$(rbenv init -)"
