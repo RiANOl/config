@@ -46,18 +46,28 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'ap/vim-css-color'
+
 Bundle 'Yggdroot/indentLine'
 Bundle 'bitc/vim-bad-whitespace'
+
 Bundle 'bling/vim-airline'
+
 Bundle 'kien/ctrlp.vim'
+
+Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'othree/html5.vim'
+
+Bundle 'othree/vim-javascript-syntax'
 Bundle 'othree/javascript-libraries-syntax.vim'
+
+Bundle 'othree/html5.vim'
+
+Bundle 'tpope/vim-haml'
+
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-fugitive'
-Bundle 'gregsexton/gitv'
+
 if (v:version == 703 && has('patch584')) || v:version > 703
   Bundle 'Valloric/YouCompleteMe'
 endif
