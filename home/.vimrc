@@ -49,7 +49,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
 
-Bundle 'Yggdroot/indentLine'
 Bundle 'bitc/vim-bad-whitespace'
 
 Bundle 'bling/vim-airline'
