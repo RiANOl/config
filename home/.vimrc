@@ -85,8 +85,3 @@ let g:solarized_underline=0
 let g:solarized_italic=0
 
 colorscheme solarized
-
-if has('gui_running')
-  set guifont=Monaco:h14
-  set columns=130
-endif
