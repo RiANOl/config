@@ -5,7 +5,6 @@ type rbenv &> /dev/null && eval "$(rbenv init -)"
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
 DISABLE_AUTO_UPDATE="true"
-DISABLE_CORRECTION="true"
 
 plugins=(brew bundler gem git-flow)
 
@@ -58,8 +57,6 @@ export LC_TELEPHONE=$LANG
 export LC_MEASUREMENT=$LANG
 export LC_ALL=$LANG
 
-[[ x$WINDOW == x ]] && [[ x$TMUX_PANE == x ]] && export TERM=xterm-256color
-
 export LS_COLORS='no=0:fi=0:di=94:ln=96:pi=30;43:so=95:do=35:bd=93:cd=33:or=36:mi=90:su=30;102:sg=30;42:tw=30;41:ow=30;104:st=91:ex=92'
 export LSCOLORS='ExGxFxadCxDxdxaCacabaE'
 export GREP_COLOR='1;33'
@@ -82,4 +79,4 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias vi='vim -p'
 
-[[ -s "$HOME/.zsh_alias" ]] && . "$HOME/.zsh_alias"
+[[ -s "$HOME/.zshrc_local" ]] && . "$HOME/.zshrc_local"

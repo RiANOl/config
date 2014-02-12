@@ -13,8 +13,6 @@
 [color]
   ui = auto
 [include]
-  path = ~/.giturl
+  path = ~/.gitconfig_local
 [push]
   default = matching
-[user]
-  name = Rianol Jou
