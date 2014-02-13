@@ -1,4 +1,7 @@
-set colorcolumn=120
+if v:version >= 703
+  set colorcolumn=120
+endif
+
 set cursorline
 set nocompatible
 set display=lastline
