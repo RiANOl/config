@@ -6,7 +6,13 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(brew bundler gem git-flow)
+plugins=()
+
+type brew &> /dev/null && plugins+=(brew)
+type bundle &> /dev/null && plugins+=(bundler)
+type gem &> /dev/null && plugins+=(gem)
+type git-flow &> /dev/null && plugins+=(git-flow)
+type vagrant &> /dev/null && plugins+=(vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
