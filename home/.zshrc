@@ -8,10 +8,12 @@ DISABLE_AUTO_UPDATE="true"
 
 plugins=()
 
+type aws &> /dev/null && plugins+=(aws)
 type brew &> /dev/null && plugins+=(brew)
 type bundle &> /dev/null && plugins+=(bundler)
 type gem &> /dev/null && plugins+=(gem)
-type git-flow &> /dev/null && plugins+=(git-flow)
+type git-flow &> /dev/null && plugins+=(git-flow-avh)
+type pod &> /dev/null && plugins+=(pod)
 type vagrant &> /dev/null && plugins+=(vagrant)
 
 source $ZSH/oh-my-zsh.sh
