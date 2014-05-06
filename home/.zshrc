@@ -40,7 +40,8 @@ window_number=""
 [[ x$TMUX_PANE != x ]] && window='$(tmux display -p "#I")'
 [[ x$window != x ]] && window_number="%{$dark_grey%}[%{$magenta%}#$window%{$dark_grey%}]%{$reset_color%}"
 
-git_branch='$(git_prompt_info)'
+git_branch=""
+type git &> /dev/null && git_branch='$(git_prompt_info)'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$dark_grey%}[%{$yellow%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$dark_grey%}]%{$reset_color%}"
 
