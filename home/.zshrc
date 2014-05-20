@@ -37,8 +37,8 @@ prompt_char="%{$light_grey%}%#%{$reset_color%}"
 window=""
 window_number=""
 [[ x$WINDOW != x ]] && window='$WINDOW'
-[[ x$TMUX_PANE != x ]] && window='$(tmux display -p "#I")'
-[[ x$window != x ]] && window_number="%{$dark_grey%}[%{$magenta%}#$window%{$dark_grey%}]%{$reset_color%}"
+[[ x$TMUX_PANE != x ]] && window='$(tmux display -p -t $TMUX_PANE "#I")'
+[[ x$window != x ]] && window_number='%{$dark_grey%}[%{$magenta%}#$window%{$dark_grey%}]%{$reset_color%}'
 
 git_branch=""
 type git &> /dev/null && git_branch='$(git_prompt_info)'
