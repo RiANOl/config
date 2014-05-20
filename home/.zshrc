@@ -1,4 +1,4 @@
-export PATH=~/bin:~/.rbenv/shims:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=~/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
 type rbenv &> /dev/null && eval "$(rbenv init -)"
 
