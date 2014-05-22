@@ -30,6 +30,9 @@ blue="%F{33}"
 cyan="%F{37}"
 green="%F{64}"
 
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
+ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue,bold
+
 user_host="%{$green%}%n%{$dark_grey%}@%{$cyan%}%m%{$reset_color%}"
 current_dir="%{$blue%}%~%{$reset_color%}"
 current_time="%{$dark_grey%}[%{$violet%}%T%{$dark_grey%}]%{$reset_color%}"
