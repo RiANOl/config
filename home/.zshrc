@@ -5,8 +5,9 @@ type rbenv &> /dev/null && eval "$(rbenv init -)"
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
 DISABLE_AUTO_UPDATE="true"
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-plugins=()
+plugins=(zsh-syntax-highlighting)
 
 type aws &> /dev/null && plugins+=(aws)
 type brew &> /dev/null && plugins+=(brew)
