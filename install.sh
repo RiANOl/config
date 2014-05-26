@@ -3,7 +3,7 @@
 cd `dirname $0`
 git submodule update --init --recursive
 
-base_dir=`pwd -P`
+base_dir=`pwd`
 
 for file in `ls -A $base_dir/home`
 do
