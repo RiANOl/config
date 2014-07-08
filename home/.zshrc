@@ -79,6 +79,8 @@ export VISUAL=$EDITOR
 export PAGER='less'
 export LESS='-FRX'
 export LESSHISTFILE='/dev/null'
+type most &> /dev/null && export PAGER='most'
+export MOST_SWITCHES='-c'
 unset HISTFILE
 
 unsetopt auto_menu
