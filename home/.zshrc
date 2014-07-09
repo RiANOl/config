@@ -72,15 +72,20 @@ export LC_ALL=$LANG
 
 export LS_COLORS='no=0:fi=0:di=94:ln=96:pi=30;43:so=95:do=35:bd=93:cd=33:or=36:mi=90:su=30;102:sg=30;42:tw=30;41:ow=30;104:st=91:ex=92'
 export LSCOLORS='ExGxFxadCxDxdxaCacabaE'
-export GREP_COLOR='1;33'
+export GREP_COLOR='38;5;166'
 export BLOCKSIZE='K'
 export EDITOR='vim'
 export VISUAL=$EDITOR
 export PAGER='less'
 export LESS='-FRX'
+export LESS_TERMCAP_mb=$(printf "\e[38;5;124m")
+export LESS_TERMCAP_md=$(printf "\e[38;5;33m")
+export LESS_TERMCAP_me=$(printf "\e[0m")
+export LESS_TERMCAP_se=$(printf "\e[0m")
+export LESS_TERMCAP_so=$(printf "\e[38;5;245m")
+export LESS_TERMCAP_ue=$(printf "\e[0m")
+export LESS_TERMCAP_us=$(printf "\e[38;5;64m")
 export LESSHISTFILE='/dev/null'
-type most &> /dev/null && export PAGER='most'
-export MOST_SWITCHES='-c'
 unset HISTFILE
 
 unsetopt auto_menu
