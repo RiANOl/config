@@ -1,5 +1,6 @@
-export PATH=~/bin:~/.rbenv/shims:~/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=~/bin:~/.pyenv/shims:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
+type pyenv &> /dev/null && eval "$(pyenv init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
 
 ZSH=$HOME/.oh-my-zsh
@@ -14,7 +15,9 @@ type brew &> /dev/null && plugins+=(brew)
 type bundle &> /dev/null && plugins+=(bundler)
 type gem &> /dev/null && plugins+=(gem)
 type git-flow &> /dev/null && plugins+=(git-flow-avh)
+type pip &> /dev/null && plugins+=(pip)
 type pod &> /dev/null && plugins+=(pod)
+type python &> /dev/null && plugins+=(python)
 type vagrant &> /dev/null && plugins+=(vagrant)
 
 source $ZSH/oh-my-zsh.sh
@@ -46,14 +49,17 @@ window_number=""
 
 git_branch=""
 type git &> /dev/null && git_branch='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$dark_grey%}[%{$yellow%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$dark_grey%}[%{$orange%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$dark_grey%}]%{$reset_color%}"
+
+pyenv_version=""
+type pyenv &> /dev/null && pyenv_version='%{$dark_grey%}[%{$yellow%}$(pyenv version-name)%{$dark_grey%}]%{$reset_color%}'
 
 rbenv_version=""
 type rbenv &> /dev/null && rbenv_version='%{$dark_grey%}[%{$red%}$(rbenv version-name)%{$dark_grey%}]%{$reset_color%}'
 
 export PROMPT="${user_host} ${current_dir} ${prompt_char} "
-export RPROMPT="${window_number}${git_branch}${rbenv_version}${current_time}"
+export RPROMPT="${window_number}${git_branch}${pyenv_version}${rbenv_version}${current_time}"
 
 export LANG='en_US.UTF-8'
 export LANGUAGE=$LANG
