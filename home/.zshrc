@@ -1,6 +1,7 @@
-export PATH=~/bin:~/.pyenv/shims:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
 type pyenv &> /dev/null && eval "$(pyenv init -)"
+type pyenv-virtualenv &> /dev/null && eval "$(pyenv virtualenv-init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
 
 ZSH=$HOME/.oh-my-zsh
