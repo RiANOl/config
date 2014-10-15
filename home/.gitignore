@@ -2,7 +2,7 @@
 *.swp
 *.log
 .svn
-Icon?
+Icon\?
 __MACOSX
 .DS_Store*
 ehthumbs.db
