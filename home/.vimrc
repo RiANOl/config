@@ -70,6 +70,8 @@ Bundle 'tpope/vim-haml'
 
 Bundle 'tpope/vim-rails'
 
+Bundle 'saltstack/salt-vim'
+
 if (v:version == 703 && has('patch584')) || v:version > 703
   Bundle 'Valloric/YouCompleteMe'
 endif
