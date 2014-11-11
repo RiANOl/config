@@ -72,6 +72,8 @@ Bundle 'tpope/vim-rails'
 
 Bundle 'saltstack/salt-vim'
 
+Bundle 'Glench/Vim-Jinja2-Syntax'
+
 if (v:version == 703 && has('patch584')) || v:version > 703
   Bundle 'Valloric/YouCompleteMe'
 endif
