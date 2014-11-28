@@ -99,6 +99,9 @@ unsetopt auto_menu
 zstyle ':completion:*' list-colors ${LS_COLORS}
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=0=0=01'
 
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
+
 alias l='ll -A'
 alias lsa='ls -A'
 alias rm='rm -i'
