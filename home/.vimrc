@@ -46,37 +46,46 @@ set t_Co=256
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
-Bundle 'bitc/vim-bad-whitespace'
+Plugin 'bitc/vim-bad-whitespace'
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
-Bundle 'ap/vim-css-color'
-Bundle 'hail2u/vim-css3-syntax'
+Plugin 'ap/vim-css-color'
+Plugin 'hail2u/vim-css3-syntax'
 
-Bundle 'othree/vim-javascript-syntax'
-Bundle 'othree/javascript-libraries-syntax.vim'
+Plugin 'othree/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
-Bundle 'othree/html5.vim'
+Plugin 'othree/html5.vim'
 
-Bundle 'tpope/vim-haml'
+Plugin 'tpope/vim-haml'
 
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 
-Bundle 'saltstack/salt-vim'
+Plugin 'saltstack/salt-vim'
 
-Bundle 'Glench/Vim-Jinja2-Syntax'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+
+let s:load_ycm_only_host_path = $HOME . '/.load_ycm_only_host.vim'
+if filereadable(s:load_ycm_only_host_path)
+  exec 'source ' . s:load_ycm_only_host_path
+endif
 
 if (v:version == 703 && has('patch584')) || v:version > 703
-  Bundle 'Valloric/YouCompleteMe'
+  if !exists('g:load_ycm_only_host') || g:load_ycm_only_host == substitute(system('hostname'), '\n', '', '')
+    Plugin 'Valloric/YouCompleteMe'
+  endif
 endif
+
+call vundle#end()
 
 filetype plugin indent on
 syntax enable
