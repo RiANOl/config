@@ -58,6 +58,8 @@ Plugin 'bling/vim-airline'
 
 Plugin 'kien/ctrlp.vim'
 
+Plugin 'tpope/vim-fugitive'
+
 Plugin 'ap/vim-css-color'
 Plugin 'hail2u/vim-css3-syntax'
 
