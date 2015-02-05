@@ -46,6 +46,7 @@ window=""
 window_number=""
 [[ x$WINDOW != x ]] && window="$WINDOW"
 [[ x$TMUX_PANE != x ]] && window=$(tmux display -p -t $TMUX_PANE "#I")
+[[ x$ITERM_SESSION_ID != x ]] && window=`echo $ITERM_SESSION_ID | cut -dt -f2 | cut -dp -f1`
 [[ x$window != x ]] && window_number="%{$dark_grey%}[%{$magenta%}#$window%{$dark_grey%}]%{$reset_color%}"
 
 git_branch=""
