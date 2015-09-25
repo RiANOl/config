@@ -16,9 +16,11 @@ type brew &> /dev/null && plugins+=(brew)
 type bundle &> /dev/null && plugins+=(bundler)
 type gem &> /dev/null && plugins+=(gem)
 type git-flow &> /dev/null && plugins+=(git-flow-avh)
+type http &> /dev/null && plugins+=(httpie)
 type pip &> /dev/null && plugins+=(pip)
 type pod &> /dev/null && plugins+=(pod)
 type python &> /dev/null && plugins+=(python)
+type redis-cli &> /dev/null && plugins+=(redis-cli)
 
 source $ZSH/oh-my-zsh.sh
 
