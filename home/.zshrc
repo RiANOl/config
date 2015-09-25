@@ -19,7 +19,6 @@ type git-flow &> /dev/null && plugins+=(git-flow-avh)
 type pip &> /dev/null && plugins+=(pip)
 type pod &> /dev/null && plugins+=(pod)
 type python &> /dev/null && plugins+=(python)
-type vagrant &> /dev/null && plugins+=(vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
