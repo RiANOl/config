@@ -77,6 +77,8 @@ Plugin 'saltstack/salt-vim'
 
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
+Plugin 'puppetlabs/puppet', {'rtp': 'ext/vim/'}
+
 let s:load_ycm_only_host_path = $HOME . '/.load_ycm_only_host.vim'
 if filereadable(s:load_ycm_only_host_path)
   exec 'source ' . s:load_ycm_only_host_path
