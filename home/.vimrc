@@ -1,5 +1,5 @@
 if v:version >= 703
-  set colorcolumn=120
+    set colorcolumn=120
 endif
 
 set cursorline
@@ -81,19 +81,24 @@ Plugin 'puppetlabs/puppet', {'rtp': 'ext/vim/'}
 
 let s:load_ycm_only_host_path = $HOME . '/.load_ycm_only_host.vim'
 if filereadable(s:load_ycm_only_host_path)
-  exec 'source ' . s:load_ycm_only_host_path
+    exec 'source ' . s:load_ycm_only_host_path
 endif
 
 if (v:version == 703 && has('patch584')) || v:version > 703
-  if !exists('g:load_ycm_only_host') || g:load_ycm_only_host == substitute(system('hostname'), '\n', '', '')
-    Plugin 'Valloric/YouCompleteMe'
-  endif
+    if !exists('g:load_ycm_only_host') || g:load_ycm_only_host == substitute(system('hostname'), '\n', '', '')
+        Plugin 'Valloric/YouCompleteMe'
+    endif
 endif
 
 call vundle#end()
 
 filetype plugin indent on
 syntax enable
+
+augroup vimrc
+    autocmd!
+    autocmd FileType puppet setlocal sw=2 sts=2
+augroup END
 
 let g:airline#extensions#tabline#enabled=1
 
