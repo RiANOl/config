@@ -21,6 +21,8 @@ type pip &> /dev/null && plugins+=(pip)
 type pod &> /dev/null && plugins+=(pod)
 type python &> /dev/null && plugins+=(python)
 type redis-cli &> /dev/null && plugins+=(redis-cli)
+type terraform &> /dev/null && plugins+=(terraform)
+type vagrant &> /dev/null && plugins+=(vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
