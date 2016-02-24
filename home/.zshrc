@@ -1,5 +1,6 @@
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
+type nodenv &> /dev/null && eval "$(nodenv init -)"
 type pyenv &> /dev/null && eval "$(pyenv init -)"
 type pyenv-virtualenv &> /dev/null && eval "$(pyenv virtualenv-init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
@@ -57,6 +58,9 @@ type git &> /dev/null && git_branch='$(git_prompt_info)'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$dark_grey%}[%{$orange%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$dark_grey%}]%{$reset_color%}"
 
+nodenv_version=""
+type nodenv &> /dev/null && nodenv_version='%{$dark_grey%}[%{$green%}$(nodenv version-name)%{$dark_grey%}]%{$reset_color%}'
+
 pyenv_version=""
 type pyenv &> /dev/null && pyenv_version='%{$dark_grey%}[%{$yellow%}$(pyenv version-name)%{$dark_grey%}]%{$reset_color%}'
 
@@ -64,7 +68,7 @@ rbenv_version=""
 type rbenv &> /dev/null && rbenv_version='%{$dark_grey%}[%{$red%}$(rbenv version-name)%{$dark_grey%}]%{$reset_color%}'
 
 export PROMPT="${user_host} ${current_dir} ${prompt_char} "
-export RPROMPT="${window_number}${git_branch}${pyenv_version}${rbenv_version}${current_time}"
+export RPROMPT="${window_number}${git_branch}${nodenv_version}${pyenv_version}${rbenv_version}${current_time}"
 
 export LANG='en_US.UTF-8'
 export LANGUAGE=$LANG
