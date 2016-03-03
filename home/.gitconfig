@@ -6,7 +6,7 @@
   co = checkout
   di = diff
   lg = log --graph --decorate
-  lgo = log --graph --format=format:'%C(yellow)%h%C(reset) %C(bold blue)(%ai)%C(reset) %C(white)%s%C(reset) - %C(green)%an%C(reset)%C(cyan)%d%C(reset)' --all
+  lgo = log --graph --format=format:'%C(yellow)%h%C(reset) %C(bold blue)%ai%C(reset) %C(cyan)%G?%C(reset) %C(white)%s%C(reset) - %C(green)%an%C(reset)%C(bold red)%d%C(reset)' --all
   st = status --short
 [branch]
   autosetuprebase = always
