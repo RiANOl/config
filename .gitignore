@@ -1,2 +1,3 @@
-home/.vim/.netrwhist
-home/.vim/bundle/*
+/home/.vim/.netrwhist
+/home/.vim/bundle/*
+!/home/.vim/bundle/Vundle.vim
