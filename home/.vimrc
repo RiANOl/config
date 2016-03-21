@@ -54,7 +54,8 @@ Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'bitc/vim-bad-whitespace'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'kien/ctrlp.vim'
 
