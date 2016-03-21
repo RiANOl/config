@@ -61,7 +61,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 
-Plugin 'ap/vim-css-color'
+Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'hail2u/vim-css3-syntax'
 
 Plugin 'othree/vim-javascript-syntax'
