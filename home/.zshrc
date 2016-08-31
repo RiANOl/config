@@ -71,19 +71,8 @@ export PROMPT="${user_host} ${current_dir} ${prompt_char} "
 export RPROMPT="${window_number}${git_branch}${nodenv_version}${pyenv_version}${rbenv_version}${current_time}"
 
 export LANG='en_US.UTF-8'
-export LANGUAGE=$LANG
-export LC_CTYPE=$LANG
-export LC_NUMERIC=$LANG
-export LC_TIME=$LANG
-export LC_COLLATE=$LANG
-export LC_MONETARY=$LANG
-export LC_MESSAGES=$LANG
-export LC_PAPER=$LANG
-export LC_NAME=$LANG
-export LC_ADDRESS=$LANG
-export LC_TELEPHONE=$LANG
-export LC_MEASUREMENT=$LANG
 export LC_ALL=$LANG
+export LANGUAGE='en'
 
 export LS_COLORS='no=0:fi=0:di=94:ln=96:pi=30;43:so=95:do=35:bd=93:cd=33:or=36:mi=90:su=30;102:sg=30;42:tw=30;41:ow=30;104:st=91:ex=92'
 export LSCOLORS='ExGxFxadCxDxdxaCacabaE'
