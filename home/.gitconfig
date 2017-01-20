@@ -12,6 +12,8 @@
     autosetuprebase = always
 [color]
     ui = auto
+[commit]
+    verbose = true
 [include]
     path = ~/.gitconfig_local
 [push]
