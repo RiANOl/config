@@ -1,7 +1,4 @@
-if v:version >= 703
-    set colorcolumn=120
-endif
-
+set colorcolumn=120
 set cursorline
 set nocompatible
 set display=lastline
@@ -45,67 +42,44 @@ set t_Co=256
 
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'altercation/vim-colors-solarized'
 
-Plugin 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-Plugin 'bitc/vim-bad-whitespace'
+Plug 'bitc/vim-bad-whitespace'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
-Plugin 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterToggle' }
+Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'gregsexton/gitv'
+Plug 'gorodinskiy/vim-coloresque'
 
-Plugin 'gorodinskiy/vim-coloresque'
-Plugin 'hail2u/vim-css3-syntax'
-
-Plugin 'othree/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-
-Plugin 'othree/html5.vim'
-
-Plugin 'tpope/vim-haml'
-
-Plugin 'tpope/vim-rails'
-
-Plugin 'saltstack/salt-vim'
-
-Plugin 'Glench/Vim-Jinja2-Syntax'
-
-Plugin 'puppetlabs/puppet', {'rtp': 'ext/vim/'}
-
-Plugin 'b4b4r07/vim-hcl'
+Plug 'chrisbra/csv.vim'
+Plug 'b4b4r07/vim-hcl'
+Plug 'rodjek/vim-puppet'
 
 let s:load_ycm_only_host_path = $HOME . '/.load_ycm_only_host.vim'
 if filereadable(s:load_ycm_only_host_path)
     exec 'source ' . s:load_ycm_only_host_path
 endif
-
-if (v:version == 703 && has('patch584')) || v:version > 703
-    if !exists('g:load_ycm_only_host') || g:load_ycm_only_host == substitute(system('hostname'), '\n', '', '')
-        Plugin 'Valloric/YouCompleteMe'
-    endif
+if !exists('g:load_ycm_only_host') || g:load_ycm_only_host == substitute(system('hostname'), '\n', '', '')
+    function! BuildYCM(info)
+        if a:info.status == 'installed' || a:info.force
+            !./install.py
+        endif
+    endfunction
+    Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 endif
 
-call vundle#end()
-
-filetype plugin indent on
-syntax enable
-
-augroup vimrc
-    autocmd!
-    autocmd FileType puppet setlocal sw=2 sts=2
-augroup END
+call plug#end()
 
 let g:airline#extensions#tabline#enabled=1
-
-let g:indentLine_color_term=239
 
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
@@ -114,3 +88,6 @@ let g:solarized_underline=0
 let g:solarized_italic=0
 
 colorscheme solarized
+
+map <C-g> :GitGutterToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
