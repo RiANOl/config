@@ -64,17 +64,20 @@ Plug 'chrisbra/csv.vim'
 Plug 'b4b4r07/vim-hcl'
 Plug 'rodjek/vim-puppet'
 
-let s:load_ycm_only_host_path = $HOME . '/.load_ycm_only_host.vim'
-if filereadable(s:load_ycm_only_host_path)
-    exec 'source ' . s:load_ycm_only_host_path
-endif
-if !exists('g:load_ycm_only_host') || g:load_ycm_only_host == substitute(system('hostname'), '\n', '', '')
-    function! BuildYCM(info)
-        if a:info.status == 'installed' || a:info.force
-            !./install.py
-        endif
-    endfunction
-    Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+if v:version > 704 || (v:version == 704 && has( 'patch1578' ))
+    let s:load_ycm_only_host_path = $HOME . '/.load_ycm_only_host.vim'
+    if filereadable(s:load_ycm_only_host_path)
+        exec 'source ' . s:load_ycm_only_host_path
+    endif
+
+    if !exists('g:load_ycm_only_host') || g:load_ycm_only_host == substitute(system('hostname'), '\n', '', '')
+        function! BuildYCM(info)
+            if a:info.status == 'installed' || a:info.force
+                !./install.py
+            endif
+        endfunction
+        Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+    endif
 endif
 
 call plug#end()
