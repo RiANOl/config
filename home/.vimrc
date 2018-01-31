@@ -26,7 +26,7 @@ set expandtab
 set shiftround
 set shiftwidth=4
 set smarttab
-set softtabstop=8
+set softtabstop=4
 set tabstop=8
 
 set encoding=utf-8
@@ -82,6 +82,13 @@ if v:version > 704 || (v:version == 704 && has( 'patch1578' ))
 endif
 
 call plug#end()
+
+augroup vimrc
+    autocmd!
+    autocmd FileType hcl setlocal shiftwidth=2 softtabstop=2
+    autocmd FileType puppet setlocal shiftwidth=2 softtabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
+augroup END
 
 let g:airline#extensions#tabline#enabled=1
 
