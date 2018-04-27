@@ -90,6 +90,7 @@ augroup vimrc
     autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
 augroup END
 
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled=1
 
 let g:solarized_termcolors=256
