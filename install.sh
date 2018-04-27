@@ -14,3 +14,4 @@ do
 done
 
 ln -s $base_dir/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/
+ln -s $base_dir/bullet-train.zsh/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes/

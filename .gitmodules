@@ -4,3 +4,6 @@
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "bullet-train.zsh"]
+	path = bullet-train.zsh
+	url = https://github.com/caiogondim/bullet-train.zsh.git
