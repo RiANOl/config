@@ -37,7 +37,7 @@ export LANG='en_US.UTF-8'
 export LC_ALL=$LANG
 export LANGUAGE='en'
 
-export LS_COLORS='di=34:ln=36:so=35:pi=1;35:ex=32:bd=33:cd=1;31:su=30;42:sg=30;42:tw=30;46:ow=30;44:mi=90:or=36:st=34'
+export LS_COLORS='di=34:ln=36:so=35:pi=95:ex=32:bd=33:cd=91:su=30;42:sg=30;42:tw=30;46:ow=30;44:mi=90:or=36:st=34'
 export LSCOLORS='exgxfxFxcxdxBxacacagae'
 export GREP_COLOR='33'
 export BLOCKSIZE='K'
