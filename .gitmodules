@@ -7,3 +7,6 @@
 [submodule "bullet-train.zsh"]
 	path = bullet-train.zsh
 	url = https://github.com/caiogondim/bullet-train.zsh.git
+[submodule "home/.tmux/plugins/tpm"]
+	path = home/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
