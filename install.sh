@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cd `dirname $0`
 git submodule update --init --recursive
@@ -7,11 +7,9 @@ base_dir=`pwd`
 
 for file in `ls -A $base_dir/home`
 do
-  if [ -e ~/$file ]; then
-    mv ~/$file ~/$file.bak
-  fi
-  ln -s $base_dir/home/$file ~/$file
+    [[ -f ~/$file && ! -L ~/$file ]] && mv ~/$file ~/$file.bak
+    ln -fhs $base_dir/home/$file ~/$file
 done
 
-ln -s $base_dir/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/
-ln -s $base_dir/bullet-train.zsh/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes/
+ln -fhs $base_dir/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/
+ln -fhs $base_dir/bullet-train.zsh/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes/
