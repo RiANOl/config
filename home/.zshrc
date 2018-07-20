@@ -11,7 +11,6 @@ plugins=(
     bundler
     docker
     gem
-    git-flow-avh
     httpie
     nomad
     pip
