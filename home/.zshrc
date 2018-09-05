@@ -64,4 +64,9 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias vi='vim -p'
 
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;3D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^[^[[D' backward-word
+
 [[ -s "$HOME/.zshrc_local" ]] && . "$HOME/.zshrc_local"
