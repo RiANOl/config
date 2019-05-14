@@ -65,6 +65,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'b4b4r07/vim-hcl'
 Plug 'rodjek/vim-puppet'
 Plug 'stephpy/vim-yaml'
+Plug 'cespare/vim-toml'
 
 if v:version > 704 || (v:version == 704 && has( 'patch1578' ))
     let s:load_ycm_only_host_path = $HOME . '/.load_ycm_only_host.vim'
