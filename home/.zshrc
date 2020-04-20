@@ -40,8 +40,8 @@ export LS_COLORS='di=34:ln=36:so=35:pi=95:ex=32:bd=33:cd=91:su=30;42:sg=30;42:tw
 export LSCOLORS='exgxfxFxcxdxBxacacagae'
 export GREP_COLOR='33'
 export BLOCKSIZE='K'
-export EDITOR='vim'
-export VISUAL=$EDITOR
+export VISUAL='vim'
+export EDITOR=$VISUAL
 export PAGER='less'
 export LESS='-FRX'
 export LESS_TERMCAP_mb=$(printf "\e[31m")
