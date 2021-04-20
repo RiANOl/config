@@ -1,5 +1,6 @@
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
+type goenv &> /dev/null && eval "$(goenv init -)"
 type nodenv &> /dev/null && eval "$(nodenv init -)"
 type pyenv &> /dev/null && eval "$(pyenv init -)"
 type pyenv-virtualenv &> /dev/null && eval "$(pyenv virtualenv-init -)"
@@ -11,6 +12,7 @@ plugins=(
     bundler
     docker
     gem
+    golang
     httpie
     nomad
     pip
