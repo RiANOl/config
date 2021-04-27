@@ -40,8 +40,6 @@ set fileformats=unix,dos,mac
 set background=dark
 set t_Co=256
 
-filetype off
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
@@ -62,24 +60,14 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 Plug 'gorodinskiy/vim-coloresque'
 
 Plug 'chrisbra/csv.vim'
-Plug 'b4b4r07/vim-hcl'
-Plug 'rodjek/vim-puppet'
-Plug 'stephpy/vim-yaml'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-ruby/vim-ruby'
 Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
 
 if v:version > 704 || (v:version == 704 && has( 'patch1578' ))
-    let s:load_ycm_only_host_path = $HOME . '/.load_ycm_only_host.vim'
-    if filereadable(s:load_ycm_only_host_path)
-        exec 'source ' . s:load_ycm_only_host_path
-    endif
-
-    if !exists('g:load_ycm_only_host') || g:load_ycm_only_host == substitute(system('hostname'), '\n', '', '')
-        function! BuildYCM(info)
-            if a:info.status == 'installed' || a:info.force
-                !./install.py
-            endif
-        endfunction
-        Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+    if has( 'python' ) || has( 'python3' )
+        Plug 'ycm-core/YouCompleteMe'
     endif
 endif
 
@@ -87,9 +75,7 @@ call plug#end()
 
 augroup vimrc
     autocmd!
-    autocmd FileType hcl setlocal shiftwidth=2 softtabstop=2
-    autocmd FileType puppet setlocal shiftwidth=2 softtabstop=2
-    autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
+    autocmd FileType go setlocal shiftwidth=8 softtabstop=2 noexpandtab
 augroup END
 
 let g:airline_powerline_fonts = 1
@@ -104,4 +90,4 @@ let g:solarized_italic=0
 colorscheme solarized
 
 map <C-g> :GitGutterToggle<CR>
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
