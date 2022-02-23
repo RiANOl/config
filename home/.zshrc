@@ -1,9 +1,11 @@
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+[[ -s "$HOME/.zshrc.before" ]] && . "$HOME/.zshrc.before"
+
+export PATH="$HOME/bin:$PATH"
 
 type goenv &> /dev/null && eval "$(goenv init -)"
 type nodenv &> /dev/null && eval "$(nodenv init -)"
+type pyenv &> /dev/null && eval "$(pyenv init --path)"
 type pyenv &> /dev/null && eval "$(pyenv init -)"
-type pyenv-virtualenv &> /dev/null && eval "$(pyenv virtualenv-init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
 
 plugins=(
@@ -14,13 +16,8 @@ plugins=(
     gem
     golang
     httpie
-    nomad
     pip
-    pod
-    python
-    redis-cli
     terraform
-    vagrant
 )
 
 ZSH=$HOME/.oh-my-zsh
@@ -71,4 +68,4 @@ bindkey '^[[1;3D' backward-word
 bindkey '^[^[[C' forward-word
 bindkey '^[^[[D' backward-word
 
-[[ -s "$HOME/.zshrc_local" ]] && . "$HOME/.zshrc_local"
+[[ -s "$HOME/.zshrc.after" ]] && . "$HOME/.zshrc.after"
