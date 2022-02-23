@@ -15,7 +15,9 @@
 [commit]
     verbose = true
 [include]
-    path = ~/.gitconfig_local
+    path = ~/.gitconfig.local
+[merge]
+    tool = vimdiff
 [push]
     default = matching
 [user]
