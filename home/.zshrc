@@ -4,13 +4,11 @@ export PATH="$HOME/bin:$PATH"
 
 type goenv &> /dev/null && eval "$(goenv init -)"
 type nodenv &> /dev/null && eval "$(nodenv init -)"
-type pyenv &> /dev/null && eval "$(pyenv init --path)"
-type pyenv &> /dev/null && eval "$(pyenv init -)"
+type pyenv &> /dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
 
 plugins=(
     zsh-syntax-highlighting
-    aws
     bundler
     docker
     gem
@@ -22,12 +20,13 @@ plugins=(
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bullet-train"
-DISABLE_AUTO_UPDATE="true"
-
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 BULLETTRAIN_STATUS_EXIT_SHOW=true
 BULLETTRAIN_DIR_EXTENDED=2
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+zstyle ':omz:update' mode disabled
 
 source $ZSH/oh-my-zsh.sh
 
