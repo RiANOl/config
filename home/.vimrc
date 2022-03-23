@@ -67,7 +67,7 @@ Plug 'stephpy/vim-yaml'
 
 if v:version > 704 || (v:version == 704 && has( 'patch1578' ))
     if has( 'python' ) || has( 'python3' )
-        Plug 'ycm-core/YouCompleteMe'
+        Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
     endif
 endif
 
@@ -88,6 +88,8 @@ let g:solarized_underline=0
 let g:solarized_italic=0
 
 colorscheme solarized
+
+let NERDTreeShowHidden=1
 
 map <C-g> :GitGutterToggle<CR>
 map <C-t> :NERDTreeToggle<CR>
