@@ -44,11 +44,23 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 source ${HOME}/.p10k.zsh
 source ${ZIM_HOME}/init.zsh
 
-alias lsa='ls -A'
-alias ll='ls -lh'
-alias l='ll -A'
-alias lk='ll -Sr'
-alias lt='ll -tr'
+if type exa &> /dev/null; then
+    alias ls='exa -g'
+    alias lsa='ls -a'
+    alias ll='ls -l'
+    alias l='ll -a'
+    alias lk='l -ssize'
+    alias lt='l -smodified'
+    alias lr='l -T'
+else
+    ls --color=auto &> /dev/null && alias ls='ls --color=auto'
+    alias lsa='ls -A'
+    alias ll='ls -lh'
+    alias l='ll -A'
+    alias lk='l -Sr'
+    alias lt='l -tr'
+    alias lr='l -R'
+fi
 
 alias grep='grep --color=auto'
 
