@@ -38,11 +38,11 @@ set fileformat=unix
 set fileformats=unix,dos,mac
 
 set background=dark
-set t_Co=256
+set termguicolors
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -55,23 +55,20 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterToggle' }
-Plug 'gregsexton/gitv', { 'on': 'Gitv' }
+Plug 'junegunn/gv.vim', { 'on': 'GV' }
 
-Plug 'gorodinskiy/vim-coloresque'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 Plug 'chrisbra/csv.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'vim-ruby/vim-ruby'
-Plug 'cespare/vim-toml'
-Plug 'stephpy/vim-yaml'
 
-if v:version > 704 || (v:version == 704 && has( 'patch1578' ))
-    if has( 'python' ) || has( 'python3' )
-        Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
-    endif
-endif
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
+
+let g:gruvbox_contrast_dark = 'hard'
+
+colorscheme gruvbox
 
 augroup vimrc
     autocmd!
@@ -81,13 +78,7 @@ augroup END
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled=1
 
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_bold=0
-let g:solarized_underline=0
-let g:solarized_italic=0
-
-colorscheme solarized
+let g:Hexokinase_highlighters = ['backgroundfull']
 
 let NERDTreeShowHidden=1
 
