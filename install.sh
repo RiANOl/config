@@ -5,17 +5,20 @@ git submodule update --init --recursive
 
 base_dir=`pwd`
 
-for file in `ls -A $base_dir/home`
+for file in `ls -A "${base_dir}/home"`
 do
-    if [ ! -L ~/$file ]; then
-        [[ -f ~/$file ]] && mv ~/$file ~/$file.bak
-        ln -s $base_dir/home/$file ~/$file
+    if [[ ! -L "~/${file}" ]]; then
+        [[ -f "~/${file}" ]] && mv "~/${file}" "~/${file}.bak"
+        ln -s "${base_dir}/home/${file}" "~/${file}"
     fi
 done
 
-if [ ! -L ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-    ln -s $base_dir/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/
+ZIM_HOME='~/.zim'
+
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 fi
-if [ ! -L ~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme ]; then
-    ln -s $base_dir/bullet-train.zsh/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes/
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
 fi
