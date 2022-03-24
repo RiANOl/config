@@ -1,0 +1,4 @@
+zmodule romkatv/powerlevel10k
+zmodule zsh-users/zsh-completions
+zmodule completion
+zmodule zsh-users/zsh-syntax-highlighting
