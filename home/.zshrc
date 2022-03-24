@@ -1,46 +1,34 @@
-[[ -s "$HOME/.zshrc.before" ]] && . "$HOME/.zshrc.before"
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-export PATH="$HOME/bin:$PATH"
+if type /opt/homebrew/bin/brew &> /dev/null; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    FPATH="$/opt/homebrew/share/zsh/site-functions:${FPATH}"
+fi
 
 type goenv &> /dev/null && eval "$(goenv init -)"
 type nodenv &> /dev/null && eval "$(nodenv init -)"
 type pyenv &> /dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
 
-plugins=(
-    zsh-syntax-highlighting
-    bundler
-    docker
-    gem
-    golang
-    httpie
-    pip
-    terraform
-)
+export PATH="${HOME}/bin:${PATH}"
 
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="bullet-train"
-
-BULLETTRAIN_STATUS_EXIT_SHOW=true
-BULLETTRAIN_DIR_EXTENDED=2
-
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-zstyle ':omz:update' mode disabled
-
-source $ZSH/oh-my-zsh.sh
-
-export LANG='en_US.UTF-8'
-export LC_ALL=$LANG
+export LC_ALL='en_US.UTF-8'
+export LANG="${LC_ALL}"
 export LANGUAGE='en'
 
-export LS_COLORS='di=34:ln=36:so=35:pi=95:ex=32:bd=33:cd=91:su=30;42:sg=30;42:tw=30;46:ow=30;44:mi=90:or=36:st=34'
-export LSCOLORS='exgxfxFxcxdxBxacacagae'
-export GREP_COLOR='33'
-export BLOCKSIZE='K'
-export VISUAL='vim'
-export EDITOR=$VISUAL
+type nvim &> /dev/null && VI='nvim' || VI='vim'
+export EDITOR="${VI}"
+export VISUAL="${VI}"
 export PAGER='less'
+
+export CLICOLOR=1
+export LS_COLORS='di=34:ln=36:so=35:pi=95:ex=32:bd=33:cd=31:su=92:sg=92:tw=94:ow=94:st=94:mi=90:or=96'
+export LSCOLORS='exgxfxFxcxdxbxCaCaEaEa'
+
+export GREP_COLOR='33'
+
 export LESS='-FRX'
 export LESS_TERMCAP_mb=$(printf "\e[31m")
 export LESS_TERMCAP_md=$(printf "\e[34m")
@@ -49,22 +37,56 @@ export LESS_TERMCAP_se=$(printf "\e[0m")
 export LESS_TERMCAP_so=$(printf "\e[33m")
 export LESS_TERMCAP_ue=$(printf "\e[0m")
 export LESS_TERMCAP_us=$(printf "\e[32m")
-export LESSHISTFILE='/dev/null'
-unset HISTFILE
 
-unsetopt auto_menu
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+ZIM_HOME=~/.zim
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-alias l='ll -A'
+source ${HOME}/.p10k.zsh
+source ${ZIM_HOME}/init.zsh
+
 alias lsa='ls -A'
-alias rm='rm -i'
-alias mv='mv -i'
+alias ll='ls -lh'
+alias l='ll -A'
+alias lk='ll -Sr'
+alias lt='ll -tr'
+
+alias grep='grep --color=auto'
+
+alias df='df -h'
+alias du='df -u'
+
 alias cp='cp -i'
-alias vi='vim -p'
+alias mv='mv -i'
+alias rm='rm -i'
 
-bindkey '^[[1;3C' forward-word
-bindkey '^[[1;3D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[^[[D' backward-word
+alias vi="${VI} -p"
+alias vim="${VI} -p"
+alias vimdiff="${VI} -d"
 
-[[ -s "$HOME/.zshrc.after" ]] && . "$HOME/.zshrc.after"
+# up arrow
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+
+# down arrow
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+
+bindkey '^[[5~'   up-line-or-history    # page up
+bindkey '^[[6~'   down-line-or-history  # page down
+bindkey '^[OF'    end-of-line           # end
+bindkey '^[OH'    beginning-of-line     # home
+bindkey '^[[F'    end-of-line           # end
+bindkey '^[[H'    beginning-of-line     # home
+bindkey '^[[1;5C' end-of-line           # ctrl + right arrow
+bindkey '^[[1;5D' beginning-of-line     # ctrl + left arrow
+bindkey '^[[1;3C' forward-word          # alt + right arrow
+bindkey '^[[1;3D' backward-word         # alt + left arrow
+bindkey '^[^[[C'  forward-word          # esc + right arrow
+bindkey '^[^[[D'  backward-word         # esc + left arrow
+bindkey '^[[Z'    reverse-menu-complete # shift + tab
+
+[[ -s "${HOME}/.zshrc.local" ]] && . "${HOME}/.zshrc.local"
