@@ -41,6 +41,9 @@ export LESS_TERMCAP_us=$(printf "\e[32m")
 ZIM_HOME=~/.zim
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
+autoload -U select-word-style
+select-word-style bash
+
 source ${HOME}/.p10k.zsh
 source ${ZIM_HOME}/init.zsh
 
