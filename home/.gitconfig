@@ -6,12 +6,42 @@
     co = checkout
     di = diff
     lg = log --graph --decorate
-    lgo = log --graph --format=format:'%C(yellow)%h%C(reset) %C(bold blue)%ai%C(reset) %C(cyan)%G?%C(reset) %C(white)%s%C(reset) - %C(green)%an%C(reset)%C(bold red)%d%C(reset)' --all
+    lgo = log --graph --format=format:'%C(172)%h%C(reset) %C(108)%ai%C(reset) %C(142)%G?%C(reset) %C(246)%s%C(reset) - %C(109)%an%C(reset)%C(167)%d%C(reset)'
     st = status --short
 [branch]
     autoSetupRebase = always
 [color]
     ui = auto
+[color "branch"]
+    current = 166
+    local = 108
+    remote = 175
+    upstream = 109
+    plain = 246
+[color "diff"]
+    context = 246
+    meta = 172
+    new = 142
+    old = 167
+    frag = 109
+    func = 246
+[color "decorate"]
+    branch = 108
+    remoteBranch = 175
+    tag = 106
+    stash = 109
+    HEAD = 166
+[color "grep"]
+    match = 172
+[color "status"]
+    header = 246
+    added = 142
+    changed = 167
+    untracked = 172
+    branch = 166
+    nobranch = 167
+    localbranch = 108
+    remoteBranch = 175
 [commit]
     verbose = true
 [include]
