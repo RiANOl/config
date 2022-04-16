@@ -9,7 +9,7 @@ set git-colors = no
 set truncation-delimiter  = ~   # Character drawn for truncations, or "utf-8"
 
 # General colors
-color default                       246         235
+color default                       246         default
 color cursor                        223         236
 color status                        default     default
 color title-focus                   default     default
@@ -29,21 +29,21 @@ color file-size                     default     default
 color grep.file                     166         default
 
 # Main view colors
-color main.cursor                   223            236
+color main.cursor                   223         236
 color graph-commit                  166         default
 color main-head                     166         default
 color main-remote                   172         default
-color main-tracked                  132         default
-color main-tag                      223         default
+color main-tracked                  175         default
+color main-tag                      106         default
 color main-local-tag                106         default
 color main-ref                      72          default
 
 # Status view colors
 color status.header                 172         236
 color status.section                214         default
-color stat-staged                   106         default
-color stat-unstaged                 124         default
-color stat-untracked                166         default
+color stat-staged                   142         default
+color stat-unstaged                 167         default
+color stat-untracked                172         default
 color stat-none                     default     default
 
 # Help view colors
@@ -70,7 +70,7 @@ color diff-add                      142         default
 color diff-add-highlight            106         default
 color diff-del                      167         default
 color diff-del-highlight            223         default
-color diff-header                   132         default
+color diff-header                   175         default
 color diff-chunk                    109         default
 color "diff-tree "                  214         default
 color "TaggerDate: "                default     default
