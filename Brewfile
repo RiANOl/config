@@ -25,6 +25,7 @@ brew "tig"
 brew "tree"
 brew "wget"
 
+cask "1password"
 cask "appcleaner"
 cask "brave-browser"
 cask "discord"
@@ -38,7 +39,6 @@ cask "protonvpn"
 cask "skype"
 cask "vimr"
 
-mas "1Password 7", id: 1333542190
 mas "Dictionaries", id: 1380563956
 mas "Fantastical", id: 975937182
 mas "Home Assistant", id: 1099568401
