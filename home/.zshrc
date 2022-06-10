@@ -68,7 +68,7 @@ fi
 alias grep='grep --color=auto'
 
 alias df='df -h'
-alias du='df -u'
+alias du='du -h'
 
 alias cp='cp -i'
 alias mv='mv -i'
