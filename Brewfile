@@ -9,7 +9,7 @@ brew "exa"
 brew "git"
 brew "gnu-tar"
 brew "gnupg"
-brew "goenv", args: ["HEAD"]
+brew "goenv"
 brew "hugo"
 brew "jq"
 brew "mas"
