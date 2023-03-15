@@ -46,10 +46,9 @@ mas "Messenger", id: 1480068668
 mas "Money Pro", id: 972572731
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Reeder", id: 1449412482
 mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
-mas "Tweetbot", id: 1384080005
+mas "Twitter", id: 1482454543
 mas "Yubico Authenticator", id: 1497506650
