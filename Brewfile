@@ -30,11 +30,10 @@ cask "fork"
 cask "iina"
 cask "iterm2"
 cask "karabiner-elements"
-cask "openvpn-connect"
 cask "podman-desktop"
 cask "protonvpn"
 cask "skype"
-cask "vimr"
+cask "visual-studio-code"
 mas "Dictionaries", id: 1380563956
 mas "Fantastical", id: 975937182
 mas "Home Assistant", id: 1099568401
