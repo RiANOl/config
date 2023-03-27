@@ -50,4 +50,5 @@ mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
 mas "Twitter", id: 1482454543
+mas "WiFiman", id: 1385561119
 mas "Yubico Authenticator", id: 1497506650
