@@ -64,6 +64,7 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 Plug 'chrisbra/csv.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'hashivim/vim-terraform'
 
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --go-completer' }
 
