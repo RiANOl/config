@@ -1,4 +1,3 @@
-set colorcolumn=120
 set cursorline
 set nocompatible
 set display=lastline
@@ -50,41 +49,42 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'bitc/vim-bad-whitespace'
-Plug 'obreitwi/vim-sort-folds'
+Plug 'ntpeters/vim-better-whitespace'
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterToggle' }
-Plug 'junegunn/gv.vim', { 'on': 'GV' }
-
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-
-Plug 'chrisbra/csv.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'hashivim/vim-terraform'
-
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --go-completer' }
+if has('nvim')
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 call plug#end()
 
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark='hard'
 
 colorscheme gruvbox
 
-augroup vimrc
-    autocmd!
-    autocmd FileType go setlocal shiftwidth=8 softtabstop=2 noexpandtab
-augroup END
-
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
-let g:Hexokinase_highlighters = ['backgroundfull']
+if has('nvim')
+    lua require('config/treesitter')
+    set foldmethod=expr
+    set foldexpr=nvim_treesitter#foldexpr()
+    set nofoldenable
+    hi link @text.diff.add diffAdded
+    hi link @text.diff.delete diffRemoved
 
-let NERDTreeShowHidden=1
-
-map <C-g> :GitGutterToggle<CR>
-map <C-t> :NERDTreeToggle<CR>
+    let g:coc_global_extensions = [
+                \ 'coc-css',
+                \ 'coc-go',
+                \ 'coc-highlight',
+                \ 'coc-html',
+                \ 'coc-html-css-support',
+                \ 'coc-json',
+                \ 'coc-markdownlint',
+                \ 'coc-yaml',
+                \ ]
+    inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+    inoremap <silent><expr> <S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() :
+                \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+endif
