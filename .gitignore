@@ -1,5 +1,6 @@
 Brewfile.lock.json
 /home/.vim/.netrwhist
 /home/.vim/plugged
-/home/.tmux/plugins
+/home/.tmux/plugins/*
+!/home/.tmux/plugins/tpm
 /home/.tmux/resurrect
