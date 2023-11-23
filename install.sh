@@ -5,11 +5,15 @@ git submodule update --init --recursive
 
 base_dir=`pwd`
 
+if [[ ! -L ~/.config/home ]]; then
+    ln -s ${base_dir}/home ~/.config/home
+fi
+
 for file in `ls -A ${base_dir}/home`
 do
     if [[ ! -L ~/${file} ]]; then
         [[ -f ~/${file} ]] && mv ~/${file} ~/${file}.bak
-        ln -s ${base_dir}/home/${file} ~/${file}
+        ln -s ~/.config/home/${file} ~/${file}
     fi
 done
 
