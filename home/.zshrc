@@ -47,8 +47,8 @@ select-word-style bash
 source ${HOME}/.p10k.zsh
 source ${ZIM_HOME}/init.zsh
 
-if type exa &> /dev/null; then
-    alias ls='exa -g'
+if type eza &> /dev/null; then
+    alias ls='eza -g'
     alias lsa='ls -a'
     alias ll='ls -l'
     alias l='ll -a'
