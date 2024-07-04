@@ -11,7 +11,6 @@ type goenv &> /dev/null && eval "$(goenv init -)"
 type nodenv &> /dev/null && eval "$(nodenv init -)"
 type pyenv &> /dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
-type tfenv &> /dev/null && eval "$(rbenv init -)"
 
 export PATH="${HOME}/bin:${PATH}"
 
