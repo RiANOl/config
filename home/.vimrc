@@ -42,6 +42,8 @@ set termguicolors
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
+autocmd FileType terraform setlocal shiftwidth=2
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
