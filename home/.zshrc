@@ -7,6 +7,7 @@ if type /opt/homebrew/bin/brew &> /dev/null; then
     FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
 fi
 
+type direnv &> /dev/null && eval "$(direnv hook zsh)"
 type goenv &> /dev/null && eval "$(goenv init -)"
 type nodenv &> /dev/null && eval "$(nodenv init -)"
 type pyenv &> /dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"

@@ -1,6 +1,7 @@
 *~
 *.swp
 *.log
+.envrc
 .svn
 Icon\?
 __MACOSX
