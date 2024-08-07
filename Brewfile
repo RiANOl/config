@@ -39,6 +39,7 @@ cask "karabiner-elements"
 cask "proton-mail"
 cask "protonvpn"
 cask "skype"
+mas "Airthings", id: 1560329275
 mas "Dictionaries", id: 1380563956
 mas "Fantastical", id: 975937182
 mas "Home Assistant", id: 1099568401
@@ -54,6 +55,7 @@ mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
-mas "Twitter", id: 1482454543
 mas "WiFiman", id: 1385561119
+mas "X", id: 333903271
 mas "Yubico Authenticator", id: 1497506650
+mas "雲端智慧控", id: 1359037577
