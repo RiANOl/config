@@ -39,7 +39,6 @@ cask "karabiner-elements"
 cask "proton-mail"
 cask "protonvpn"
 cask "skype"
-mas "Airthings", id: 1560329275
 mas "Dictionaries", id: 1380563956
 mas "Fantastical", id: 975937182
 mas "Home Assistant", id: 1099568401
