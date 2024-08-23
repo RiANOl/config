@@ -56,6 +56,5 @@ mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
 mas "WiFiman", id: 1385561119
-mas "X", id: 333903271
 mas "Yubico Authenticator", id: 1497506650
 mas "雲端智慧控", id: 1359037577
