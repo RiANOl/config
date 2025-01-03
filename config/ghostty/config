@@ -1,0 +1,9 @@
+font-size = 16
+theme = GruvboxDarkHard
+fullscreen
+quit-after-last-window-closed = true
+macos-non-native-fullscreen = true
+macos-icon = custom-style
+macos-icon-frame = beige
+macos-icon-ghost-color = black
+macos-icon-screen-color = black
