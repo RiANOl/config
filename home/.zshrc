@@ -8,10 +8,12 @@ if type /opt/homebrew/bin/brew &> /dev/null; then
 fi
 
 type direnv &> /dev/null && eval "$(direnv hook zsh)"
-type goenv &> /dev/null && export GOENV_GOPATH_PREFIX=${HOME}/.go && eval "$(goenv init -)"
+type goenv &> /dev/null && export GOENV_GOPATH_PREFIX=${HOME}/.go && GOENV_PATH_ORDER=front eval "$(goenv init -)"
 type nodenv &> /dev/null && eval "$(nodenv init -)"
 type pyenv &> /dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
+
+export PATH="${HOME}/.local/bin:${PATH}"
 
 export LC_ALL='en_US.UTF-8'
 export LANG="${LC_ALL}"
