@@ -46,8 +46,6 @@ autocmd FileType terraform setlocal shiftwidth=2
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -55,15 +53,26 @@ Plug 'ntpeters/vim-better-whitespace'
 
 if has('nvim')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-vsnip'
+    Plug 'hrsh7th/vim-vsnip'
+
+    Plug 'onsails/lspkind.nvim'
+
+    Plug 'ellisonleao/gruvbox.nvim'
+else
+    Plug 'morhetz/gruvbox'
 endif
 
 call plug#end()
 
-let g:gruvbox_contrast_dark='hard'
-
-colorscheme gruvbox
-
+let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
@@ -72,21 +81,12 @@ if has('nvim')
     set foldmethod=expr
     set foldexpr=nvim_treesitter#foldexpr()
     set nofoldenable
-    hi link @text.diff.add diffAdded
-    hi link @text.diff.delete diffRemoved
 
-    let g:coc_global_extensions = [
-                \ 'coc-css',
-                \ 'coc-go',
-                \ 'coc-highlight',
-                \ 'coc-html',
-                \ 'coc-html-css-support',
-                \ 'coc-json',
-                \ 'coc-markdownlint',
-                \ 'coc-yaml',
-                \ ]
-    inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-    inoremap <silent><expr> <S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
-    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() :
-                \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+    lua require('config/cmp')
+
+    lua require('config/gruvbox')
+else
+    let g:gruvbox_contrast_dark='hard'
 endif
+
+colorscheme gruvbox
