@@ -63,6 +63,9 @@ if has('nvim')
     Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
 
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'Exafunction/codeium.nvim'
+
     Plug 'onsails/lspkind.nvim'
 
     Plug 'ellisonleao/gruvbox.nvim'
@@ -83,6 +86,8 @@ if has('nvim')
     set nofoldenable
 
     lua require('config/cmp')
+
+    lua require('config/codeium')
 
     lua require('config/gruvbox')
 else
