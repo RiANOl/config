@@ -42,7 +42,6 @@ cask "iina"
 cask "karabiner-elements"
 cask "proton-mail"
 cask "protonvpn"
-cask "skype"
 cask "wifiman"
 mas "Dictionaries", id: 1380563956
 mas "Fantastical", id: 975937182
