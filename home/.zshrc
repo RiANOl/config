@@ -40,7 +40,6 @@ export LESS_TERMCAP_ue=$(printf "\e[0m")
 export LESS_TERMCAP_us=$(printf "\e[32m")
 
 ZIM_HOME=~/.zim
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 autoload -U select-word-style
 select-word-style bash
