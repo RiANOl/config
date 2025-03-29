@@ -74,8 +74,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias vi="${VI} -p"
-alias vim="${VI} -p"
+alias vi="${VI}"
+alias vim="${VI}"
 alias vimdiff="${VI} -d"
 
 # up arrow
