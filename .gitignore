@@ -1,5 +1,5 @@
 Brewfile.lock.json
-/config/nvim/plugged
+lazy-lock.json
 /home/.tmux/plugins/*
 !/home/.tmux/plugins/tpm
 /home/.tmux/resurrect
