@@ -1,7 +1,3 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 if type /opt/homebrew/bin/brew &> /dev/null; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
@@ -12,6 +8,7 @@ type goenv &> /dev/null && export GOENV_GOPATH_PREFIX=${HOME}/.go && GOENV_PATH_
 type nodenv &> /dev/null && eval "$(nodenv init -)"
 type pyenv &> /dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
+type oh-my-posh &> /dev/null && eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.yaml)"
 
 export PATH="${HOME}/.local/bin:${PATH}"
 
@@ -44,7 +41,6 @@ ZIM_HOME=~/.zim
 autoload -U select-word-style
 select-word-style bash
 
-source ${HOME}/.p10k.zsh
 source ${ZIM_HOME}/init.zsh
 
 if type eza &> /dev/null; then

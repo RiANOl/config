@@ -1,6 +1,5 @@
 zmodule environment
 zmodule termtitle
-zmodule romkatv/powerlevel10k
 zmodule zsh-users/zsh-completions
 zmodule completion
 zmodule zdharma-continuum/fast-syntax-highlighting

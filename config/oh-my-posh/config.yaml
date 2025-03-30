@@ -1,0 +1,130 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+final_space: true
+version: 3
+
+console_title_template: "{{ .PWD }}"
+
+palette:
+  bg: "#1a1b26"
+  celeste-blue: "#b4f9f8"
+  white-blue: "#a9b1d6"
+  blue-black: "#565f89"
+  blue-bell: "#9aa5ce"
+  pastal-grey: "#cfc9c2"
+  green: "#9ece6a"
+  orange: "#ff9e64"
+  purple: "#9d7cd8"
+  red: "#db4b4b"
+  teal: "#1abc9c"
+  terminal-black: "#414868"
+  terminal-blue: "#7aa2f7"
+  terminal-cyan: "#7dcfff"
+  terminal-green: "#73daca"
+  terminal-magenta: "#bb9af7"
+  terminal-red: "#f7768e"
+  terminal-white: "#c0caf5"
+  terminal-yellow: "#e0af68"
+
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: os
+        style: plain
+        foreground: p:pastal-grey
+        template: "{{ .Icon }} "
+      - type: session
+        style: plain
+        foreground: p:blue-bell
+        template: "{{ .UserName }}"
+      - type: session
+        style: plain
+        foreground: p:terminal-black
+        template: "{{ if .SSHSession }}@{{ end }}"
+      - type: session
+        style: plain
+        foreground: p:blue-black
+        template: "{{ if .SSHSession }}{{ .HostName }}{{ end }}"
+      - type: path
+        style: plain
+        foreground: p:terminal-blue
+        template: " {{ .Path }}"
+        properties:
+          style: full
+      - type: git
+        style: plain
+        foreground_templates:
+          - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:terminal-red{{ end }}"
+          - "{{ if and (gt .Ahead 0) (gt .Behind 0)}}p:orange {{ end }}"
+          - "{{ if gt .Ahead 0 }}p:terminal-magenta{{ end }}"
+          - "{{ if gt .Behind 0 }}p:teal{{ end }}"
+          - "p:white-blue"
+        properties:
+          branch_icon: " "
+          fetch_status: true
+
+  - type: prompt
+    alignment: right
+    overflow: hide
+    segments:
+      - type: php
+        style: plain
+        foreground: p:purple
+        template: " 󰌟 {{ .Full }}"
+      - type: python
+        style: plain
+        foreground: p:terminal-yellow
+        template: "  {{ .Full }}"
+      - type: node
+        style: plain
+        foreground: p:green
+        template: "  {{ .Full }}"
+      - type: ruby
+        style: plain
+        foreground: p:terminal-red
+        template: "  {{ .Full }}"
+      - type: go
+        style: plain
+        foreground: p:terminal-cyan
+        template: " 󰟓 {{ .Full }}"
+      - type: time
+        style: plain
+        foreground: p:pastal-grey
+        template: "  {{ .CurrentDate | date .Format }}"
+
+  - type: prompt
+    newline: true
+    alignment: left
+    segments:
+      - type: text
+        style: plain
+        foreground: p:terminal-green
+        template: ""
+
+  - type: rprompt
+    alignment: right
+    overflow: hide
+    segments:
+      - type: status
+        style: plain
+        foreground: p:red
+        template: " {{ .Code }}"
+
+secondary_prompt:
+  foreground: p:terminal-green
+  template: " "
+
+tooltips:
+  - type: aws
+    tips:
+      - aws
+      - terraform
+    style: plain
+    foreground: p:orange
+    template: "  {{ .Profile }}{{ if .Region }} :: {{ .Region }}{{ end }}"
+  - type: kubectl
+    tips:
+      - kubectl
+      - helm
+    foreground: p:terminal-cyan
+    template: "󱃾 {{ .Context }}{{ if .Namespace }} :: {{ .Namespace }}{{ end }}"
