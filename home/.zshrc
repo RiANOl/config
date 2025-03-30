@@ -48,6 +48,7 @@ source ${HOME}/.p10k.zsh
 source ${ZIM_HOME}/init.zsh
 
 if type eza &> /dev/null; then
+    export EZA_CONFIG_DIR=~/.config/eza
     alias ls='eza -g'
     alias lsa='ls -a'
     alias ll='ls -l'
