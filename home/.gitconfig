@@ -8,7 +8,7 @@
     co = checkout
     di = diff
     lg = log --graph --decorate
-    lgo = log --graph --format=format:'%C(172)%h%C(reset) %C(108)%ai%C(reset) %C(142)%G?%C(reset) %C(246)%s%C(reset) - %C(109)%an%C(reset)%C(167)%d%C(reset)'
+    lgo = log --graph --format=format:'%C(auto)%h%C(reset) %C(blue)%ai%C(reset) %C(green)%G?%C(reset) %C(normal)%s%C(reset) %C(cyan)%an %C(magenta)<%ae>%C(reset)%C(auto)%d%C(reset)'
     st = status --short
 
 [color]
