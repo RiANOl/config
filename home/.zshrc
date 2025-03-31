@@ -36,7 +36,7 @@ export LESS_TERMCAP_so=$(printf "\e[33m")
 export LESS_TERMCAP_ue=$(printf "\e[0m")
 export LESS_TERMCAP_us=$(printf "\e[32m")
 
-ZIM_HOME=~/.zim
+ZIM_HOME=${HOME}/.zim
 
 autoload -U select-word-style
 select-word-style bash
@@ -44,14 +44,14 @@ select-word-style bash
 source ${ZIM_HOME}/init.zsh
 
 if type eza &> /dev/null; then
-    export EZA_CONFIG_DIR=~/.config/eza
-    alias ls='eza -g'
-    alias lsa='ls -a'
-    alias ll='ls -l'
-    alias l='ll -a'
-    alias lk='l -ssize'
-    alias lt='l -smodified'
-    alias lr='l -T'
+    export EZA_CONFIG_DIR=${HOME}/.config/eza
+    alias ls='eza --icons --color-scale'
+    alias lsa='ls --all'
+    alias ll='ls --long --group'
+    alias l='ll --all'
+    alias lk='l --sort=size'
+    alias lt='l --sort=modified'
+    alias lr='l --tree'
 else
     ls --color=auto &> /dev/null && alias ls='ls --color=auto'
     alias lsa='ls -A'
