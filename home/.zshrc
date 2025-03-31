@@ -8,7 +8,7 @@ type goenv &> /dev/null && export GOENV_GOPATH_PREFIX=${HOME}/.go && GOENV_PATH_
 type nodenv &> /dev/null && eval "$(nodenv init -)"
 type pyenv &> /dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 type rbenv &> /dev/null && eval "$(rbenv init -)"
-type oh-my-posh &> /dev/null && eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.yaml)"
+type oh-my-posh &> /dev/null && eval "$(oh-my-posh init zsh --config ${HOME}/.config/oh-my-posh/config.yaml)"
 
 export PATH="${HOME}/.local/bin:${PATH}"
 
