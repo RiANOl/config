@@ -45,9 +45,9 @@ source ${ZIM_HOME}/init.zsh
 
 if type eza &> /dev/null; then
     export EZA_CONFIG_DIR=${HOME}/.config/eza
-    alias ls='eza --icons --color-scale'
+    alias ls='eza --icons --color-scale --sort=Name'
     alias lsa='ls --all'
-    alias ll='ls --long --group'
+    alias ll='ls --long --group --time-style=long-iso'
     alias l='ll --all'
     alias lk='l --sort=size'
     alias lt='l --sort=modified'
@@ -55,7 +55,7 @@ if type eza &> /dev/null; then
 else
     ls --color=auto &> /dev/null && alias ls='ls --color=auto'
     alias lsa='ls -A'
-    alias ll='ls -lh'
+    alias ll='ls -lhD "%Y-%m-%d %H:%M"'
     alias l='ll -A'
     alias lk='l -Sr'
     alias lt='l -tr'
