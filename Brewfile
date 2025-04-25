@@ -1,5 +1,4 @@
 tap "hashicorp/tap"
-tap "homebrew/bundle"
 brew "aria2"
 brew "aws-vault"
 brew "awscli"
