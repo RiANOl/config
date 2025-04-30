@@ -1,6 +1,5 @@
 if type /opt/homebrew/bin/brew &> /dev/null; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
 fi
 
 type direnv &> /dev/null && eval "$(direnv hook zsh)"
@@ -37,9 +36,6 @@ export LESS_TERMCAP_ue=$(printf "\e[0m")
 export LESS_TERMCAP_us=$(printf "\e[32m")
 
 ZIM_HOME=${HOME}/.zim
-
-autoload -U select-word-style
-select-word-style bash
 
 source ${ZIM_HOME}/init.zsh
 
@@ -92,6 +88,17 @@ if type fzf &> /dev/null; then
 "
 fi
 
+if type ruby &> /dev/null; then
+    function yaml2json () {
+        ruby -ryaml -rjson -e "puts JSON.pretty_generate(YAML.load_file('$1'))"
+    }
+fi
+
+if type terraform &> /dev/null; then
+    autoload -U +X bashcompinit && bashcompinit
+    complete -o nospace -C terraform terraform
+fi
+
 alias grep='grep --color=auto'
 
 alias df='df -h'
@@ -104,6 +111,9 @@ alias rm='rm -i'
 alias vi="${VI}"
 alias vim="${VI}"
 alias vimdiff="${VI} -d"
+
+autoload -U select-word-style
+select-word-style bash
 
 # up arrow
 autoload -U up-line-or-beginning-search
