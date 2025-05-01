@@ -1,5 +1,3 @@
 Brewfile.lock.json
 lazy-lock.json
-/home/.tmux/plugins/*
-!/home/.tmux/plugins/tpm
-/home/.tmux/resurrect
+config.kdl.bak
