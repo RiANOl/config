@@ -1,39 +1,65 @@
 #!/bin/zsh
 
-cd `dirname $0`
+set -euo pipefail
 
-base_dir=`pwd`
+cd "$(dirname "$0")"
 
-if [[ ! -L ~/.home ]]; then
-    ln -s ${base_dir}/home ~/.home
-fi
+readonly BASE_DIR="$(pwd)"
+readonly ZIM_HOME="$HOME/.zim"
 
-for file in `ls -A ~/.home`
-do
-    if [[ ! -L ~/${file} ]]; then
-        [[ -f ~/${file} ]] && mv ~/${file} ~/${file}.bak
-        ln -s .home/${file} ~/${file}
+create_symlink() {
+    local source="$1"
+    local target="$2"
+    
+    if [[ ! -L "$target" ]]; then
+        [[ -f "$target" ]] && mv "$target" "${target}.bak"
+        ln -s "$source" "$target"
     fi
-done
+}
 
-if [[ ! -L ~/.config/config ]]; then
-    ln -s ${base_dir}/config ~/.config/config
-fi
-
-for file in `ls -A ~/.config/config`
-do
-    if [[ ! -L ~/.config/${file} ]]; then
-        [[ -f ~/.config/${file} ]] && mv ~/.config/${file} ~/.config/${file}.bak
-        ln -s config/${file} ~/.config/${file}
+setup_home_dotfiles() {
+    if [[ ! -L "$HOME/.home" ]]; then
+        ln -s "$BASE_DIR/home" "$HOME/.home"
     fi
-done
 
-ZIM_HOME=~/.zim
+    if [[ -d "$HOME/.home" ]]; then
+        for file in "$HOME/.home"/*; do
+            [[ -e "$file" ]] || continue
+            local filename="$(basename "$file")"
+            create_symlink ".home/$filename" "$HOME/$filename"
+        done
+    fi
+}
 
-if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
-    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-fi
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  source ${ZIM_HOME}/zimfw.zsh init -q
-fi
+setup_config_dotfiles() {
+    if [[ ! -L "$HOME/.config/config" ]]; then
+        ln -s "$BASE_DIR/config" "$HOME/.config/config"
+    fi
+
+    if [[ -d "$HOME/.config/config" ]]; then
+        for file in "$HOME/.config/config"/*; do
+            [[ -e "$file" ]] || continue
+            local filename="$(basename "$file")"
+            create_symlink "config/$filename" "$HOME/.config/$filename"
+        done
+    fi
+}
+
+setup_zim() {
+    if [[ ! -e "$ZIM_HOME/zimfw.zsh" ]]; then
+        curl -fsSL --create-dirs -o "$ZIM_HOME/zimfw.zsh" \
+            https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+    fi
+    
+    if [[ ! "$ZIM_HOME/init.zsh" -nt "${ZDOTDIR:-$HOME}/.zimrc" ]]; then
+        source "$ZIM_HOME/zimfw.zsh" init -q
+    fi
+}
+
+main() {
+    setup_home_dotfiles
+    setup_config_dotfiles
+    setup_zim
+}
+
+main "$@"
