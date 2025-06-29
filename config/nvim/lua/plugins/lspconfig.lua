@@ -2,23 +2,23 @@ return {
     {
 	'neovim/nvim-lspconfig',
 	dependencies = {
-	    'hrsh7th/cmp-nvim-lsp',
-	    "hrsh7th/nvim-cmp",
+            'saghen/blink.cmp',
 	},
 	opts = {
-	    'gopls',
-	    'terraformls',
-	    'tflint',
+            servers = {
+                gopls = {},
+                terraformls = {},
+                tflint = {},
+            },
 	},
 	config = function(_, opts)
-	    local lspconfig = require('lspconfig')
-	    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local lspconfig = require('lspconfig')
 
-	    for i, v in ipairs(opts) do
-		lspconfig[v].setup {
-		    capabilities = capabilities
-		}
-	    end
+            for server, config in pairs(opts.servers) do
+                config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+                lspconfig[server].setup(config)
+            end
+
 	end
     }
 }
