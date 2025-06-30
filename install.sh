@@ -31,7 +31,7 @@ setup_home_dotfiles() {
     fi
 }
 
-setup_config_dotfiles() {
+setup_application_configs() {
     if [[ ! -L "$HOME/.config/config" ]]; then
         ln -s "$BASE_DIR/config" "$HOME/.config/config"
     fi
@@ -57,9 +57,18 @@ setup_zim() {
 }
 
 main() {
+    echo "Setting up configuration..."
+    
+    echo "Setting up home dotfiles..."
     setup_home_dotfiles
-    setup_config_dotfiles
+    
+    echo "Setting up application configs..."
+    setup_application_configs
+    
+    echo "Setting up Zim framework..."
     setup_zim
+    
+    echo "Configuration setup complete!"
 }
 
 main "$@"
