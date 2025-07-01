@@ -1,6 +1,5 @@
 vim.o.cursorline = true
 vim.o.number = true
-vim.o.winborder = 'rounded'
 
 vim.o.expandtab = true
 vim.o.smarttab = true

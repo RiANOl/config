@@ -9,8 +9,14 @@ return {
         version = '1.*',
         opts = {
             completion = {
+                menu = {
+                    border = 'rounded',
+                },
                 documentation = {
                     auto_show = true,
+                    window = {
+                        border = 'rounded',
+                    },
                 },
             },
             sources = {
