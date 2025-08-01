@@ -112,8 +112,7 @@ alias vi="${VI}"
 alias vim="${VI}"
 alias vimdiff="${VI} -d"
 
-autoload -U select-word-style
-select-word-style bash
+WORDCHARS=''
 
 # up arrow
 autoload -U up-line-or-beginning-search
