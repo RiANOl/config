@@ -112,7 +112,7 @@ alias vi="${VI}"
 alias vim="${VI}"
 alias vimdiff="${VI} -d"
 
-WORDCHARS=''
+WORDCHARS='_-.'
 
 # up arrow
 autoload -U up-line-or-beginning-search
