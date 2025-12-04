@@ -56,7 +56,6 @@ mas "iA Writer", id: 775737590
 mas "iStat Menus", id: 6499559693
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
-mas "Messenger", id: 1480068668
 mas "Money Pro", id: 972572731
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
