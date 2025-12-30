@@ -5,6 +5,7 @@ macos-icon = custom-style
 macos-icon-frame = beige
 macos-icon-ghost-color = black
 macos-icon-screen-color = black
+macos-non-native-fullscreen = true
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 keybind = shift+enter=text:\n
