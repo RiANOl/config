@@ -2,5 +2,5 @@ zmodule environment
 zmodule termtitle
 zmodule zsh-users/zsh-completions
 zmodule zsh-users/zsh-autosuggestions
-zmodule completion
 zmodule zdharma-continuum/fast-syntax-highlighting
+zmodule completion

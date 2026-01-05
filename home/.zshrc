@@ -35,6 +35,8 @@ export LESS_TERMCAP_so=$(printf "\e[33m")
 export LESS_TERMCAP_ue=$(printf "\e[0m")
 export LESS_TERMCAP_us=$(printf "\e[32m")
 
+[[ -d "${HOME}/.zsh/completions" ]] && fpath=("${HOME}/.zsh/completions" $fpath)
+
 ZIM_HOME=${HOME}/.zim
 
 source ${ZIM_HOME}/init.zsh
