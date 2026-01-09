@@ -1,11 +1,6 @@
 return {
     {
         'saghen/blink.cmp',
-        dependencies = {
-            {
-                'Exafunction/codeium.nvim',
-            },
-        },
         version = '1.*',
         opts = {
             completion = {
@@ -37,10 +32,7 @@ return {
                 ['<PageDown>'] = { 'scroll_documentation_down', 'fallback' },
             },
             sources = {
-                default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
-                providers = {
-                    codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
-                },
+                default = { 'lsp', 'path', 'buffer', 'snippets' },
             },
             cmdline = {
                 keymap = {
